@@ -11,9 +11,9 @@ class StorageController extends Controller
 {
     use AuthorizesRequests;
 
-    public function download(Archive $archive, StorageService $storageService)
+    public function download($module, Archive $archive, StorageService $storageService)
     {
-        $this->authorize('download');
+        $this->authorize($module.'/download');
         return $storageService->download($archive);
     }
 }

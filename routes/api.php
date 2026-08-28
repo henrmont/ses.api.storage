@@ -6,6 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'api'], function ($router) {
 
-    Route::get('download/{archive}', [StorageController::class, 'download'])->middleware(Auth::class);
+    Route::get('download/{module}/{archive}', [StorageController::class, 'download'])->middleware(Auth::class);
 
 });
